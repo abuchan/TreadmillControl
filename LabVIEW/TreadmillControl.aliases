@@ -1,0 +1,9 @@
+[My Computer]
+My Computer = "128.32.45.96"
+
+[NI-RIO Evaluation HW]
+NI-RIO Evaluation HW = "10.0.0.2"
+
+[RT Single-Board RIO]
+RT Single-Board RIO = "0.0.0.0"
+
