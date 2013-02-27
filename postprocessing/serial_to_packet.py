@@ -22,8 +22,7 @@ def extract_packet(data,index):
 def parse_packet(packet):
    # parse telemetry packet
    if(ord(packet[3]) == 0x83):
-   #time|Left pstate|Right pstate|Commanded Left pstate| Commanded Right pstate|DCR|DCL|RBEMF|LBEMF|Gyrox|Gyroy|Gyroz|Ax|Ay|Az
-      values = unpack('Lllllhhhhhhhhhhh', packet[4:-1])
+      values = unpack('L4l12h', packet[4:-1])
       return ', '.join(map(str,values))
    else:
       return packet.encode('hex')
@@ -39,7 +38,7 @@ def parse_datafile(filename):
    filename_list.insert(-1, 'parsed')
    out_filename = '.'.join(filename_list)
    f_out = open(out_filename,'w')
-   
+   f_out.write('time, posL, posR, composL, composR, dcL, dcR, gyroX, gyroY, gyroZ, accelX, accelY, accelZ, bemfL, bemfR, Vbatt, sync\n')
    d = read_datafile(filename)
    i = 0
    while(i<len(d)):
