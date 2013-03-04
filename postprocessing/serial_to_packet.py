@@ -2,6 +2,8 @@ from struct import unpack
 from ftplib import FTP
 from glob import glob
 from os import makedirs
+from shutil import copy2
+from optparse import OptionParser
 
 # Remote sbRIO address and folder
 ftp_addr = '10.0.0.2'
@@ -57,11 +59,11 @@ def fetch_and_parse(num = -1):
             print "Failed to copy robot file: %s" % robot_filename
          
          try:
-            optitrack_filename = optitrack_files[file_idx/2]
+            optitrack_filename = optitrack_files[i/2]
             new_optitrack_filename = convert_optitrack_filename(optitrack_filename)
             copy2(optitrack_filename, local_dir + new_optitrack_filename)
-         except:
-            print "Failed to copy optitrack file"
+         except Exception as e:
+            print "Failed to copy optitrack file with error: %s" % str(e)
       
    print '%d logs read' % log_count
 
@@ -123,3 +125,15 @@ def parse_datafile(filename):
          f_out.write(parse_packet(packet) + '\n')
    
    f_out.close()
+   
+# Process from command line
+parser = OptionParser()
+
+(options, args) = parser.parse_args()
+
+try:
+   num_files = int(args[0])
+except:
+   num_files = -1
+   
+fetch_and_parse(num_files)
