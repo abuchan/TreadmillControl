@@ -8,18 +8,21 @@ ftp_addr = '10.0.0.2'
 ftp_dir = 'logs'
 
 # Where to find OptitrackLogs
-optitrack_dir = ''
+optitrack_dir = '../TrackingTools/'
+optitrack_prefix = 'TrackingData*'
 
 # Where collected files get put
 logs_dir = './logs/'
 
 # Get the most recent num files, all if num is -1
-def fetch_and_parse(num):
+def fetch_and_parse(num = -1):
    host = FTP(ftp_addr)
    host.login()
    host.cwd(ftp_dir)
    dirlist = []
    host.dir(dirlist.append)
+   
+   optitrack_files = glob(optitrack_dir + optitrack_prefix)
    
    if num is -1:
       file_idx = range(0,len(dirlist),2)
@@ -35,22 +38,44 @@ def fetch_and_parse(num):
       if len(glob(local_dir)) is not 0:
          print 'Error: %s directory already exists' % datestring
       else:
-         makedirs(local_dir)
-         local_ctrl_file = open(local_dir + ctrl_filename,'wb')
-         host.retrbinary('RETR ' + ctrl_filename, local_ctrl_file.write)
-         local_ctrl_file.close()
+         try:
+            makedirs(local_dir)
+            local_ctrl_file = open(local_dir + ctrl_filename,'wb')
+            host.retrbinary('RETR ' + ctrl_filename, local_ctrl_file.write)
+            local_ctrl_file.close()
+            log_count = log_count + 1
+         except:
+            print "Failed to copy control file: %s" % ctrl_filename
+            
+         try:
+            robot_filename = dirlist[i+1].split()[-1]
+            local_robot_file = open(local_dir + robot_filename, 'wb')
+            host.retrbinary('RETR ' + robot_filename, local_robot_file.write)
+            local_robot_file.close()
+            parse_datafile(local_dir + robot_filename)
+         except:
+            print "Failed to copy robot file: %s" % robot_filename
          
-         robot_filename = dirlist[i+1].split()[-1]
-         local_robot_file = open(local_dir + robot_filename, 'wb')
-         host.retrbinary('RETR ' + robot_filename, local_robot_file.write)
-         local_robot_file.close()
-         
-         parse_datafile(local_dir + robot_filename)
-         
-         log_count = log_count + 1
+         try:
+            optitrack_filename = optitrack_files[file_idx/2]
+            new_optitrack_filename = convert_optitrack_filename(optitrack_filename)
+            copy2(optitrack_filename, local_dir + new_optitrack_filename)
+         except:
+            print "Failed to copy optitrack file"
       
    print '%d logs read' % log_count
-         
+
+def convert_optitrack_filename(optitrack_filename):
+   time_tokens = optitrack_filename.split()
+   optitrack_date = time_tokens[-2].replace('-','_')
+   optitrack_time = time_tokens[-1].split('.')
+   optitrack_hour = int(optitrack_time[0])
+   optitrack_minute = int(optitrack_time[1][0:2])
+   if(optitrack_time[1][2:] == 'pm'):
+      optitrack_hour = optitrack_hour + 12
+   
+   return '%s_%02d_%02d_00_Tracking.txt' % (optitrack_date, optitrack_hour, optitrack_minute)
+   
 def extract_packet(data,index):
    size = ord(data[index])
    size_check = ord(data[index+1])
