@@ -10,7 +10,7 @@ ftp_addr = '10.0.0.2'
 ftp_dir = 'logs'
 
 # Where to find OptitrackLogs
-optitrack_dir = '../TrackingTools/'
+optitrack_dir = '../TrackingTools/TrackingData/'
 optitrack_prefix = 'TrackingData*'
 
 # Where collected files get put
@@ -73,7 +73,7 @@ def convert_optitrack_filename(optitrack_filename):
    optitrack_time = time_tokens[-1].split('.')
    optitrack_hour = int(optitrack_time[0])
    optitrack_minute = int(optitrack_time[1][0:2])
-   if(optitrack_time[1][2:] == 'pm'):
+   if(optitrack_time[1][2:] == 'pm' and optitrack_hour != 12):
       optitrack_hour = optitrack_hour + 12
    
    return '%s_%02d_%02d_00_Tracking.txt' % (optitrack_date, optitrack_hour, optitrack_minute)

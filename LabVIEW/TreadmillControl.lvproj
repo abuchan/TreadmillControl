@@ -1225,11 +1225,49 @@
 				<Item Name="Rendezvous Name &amp; Ref DB Action.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/rendezvs.llb/Rendezvous Name &amp; Ref DB Action.ctl"/>
 				<Item Name="Rendezvous Name &amp; Ref DB.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/rendezvs.llb/Rendezvous Name &amp; Ref DB.vi"/>
 				<Item Name="Create Rendezvous.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/rendezvs.llb/Create Rendezvous.vi"/>
+				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+				<Item Name="NI_FpgaMspHost.lvlib" Type="Library" URL="/&lt;vilib&gt;/rvi/Analysis/host/Public/NI_FpgaMspHost.lvlib"/>
 			</Item>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="TreadmillControl_FPGATarget_Exercise2_CF30559D.lvbitx" Type="Document" URL="../FPGA Bitfiles/TreadmillControl_FPGATarget_Exercise2_CF30559D.lvbitx"/>
+			<Item Name="niLvFpga_Close_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_Close_Dynamic.vi"/>
+			<Item Name="niLvFpgaFormatErrorSource.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaFormatErrorSource.vi"/>
+			<Item Name="niLvFpgaWhatHappensToTopLevelVI.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaWhatHappensToTopLevelVI.ctl"/>
+			<Item Name="niFpgaNodeNameForErrorReporting.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaNodeNameForErrorReporting.ctl"/>
+			<Item Name="niLvFpgaAdjustHostInterfaceError.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaAdjustHostInterfaceError.vi"/>
+			<Item Name="niLvFpga_Run_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_Run_Dynamic.vi"/>
+			<Item Name="niFpgaHostInterfaceSession.ctl" Type="VI" URL="../../../../../../../../../Program Files (x86)/National Instruments/LabVIEW 2011/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/niFpgaHostInterfaceSession.ctl"/>
+			<Item Name="niFpgaDynamicAddResources.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/dynamic/niFpgaDynamicAddResources.vi"/>
+			<Item Name="niLvFpgaErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaErrorClusterFromErrorCode.vi"/>
+			<Item Name="nirviErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/RVI Host/nirviSupport.llb/nirviErrorClusterFromErrorCode.vi"/>
+			<Item Name="nirviWhatTheDeviceIsDoing.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/ClientSDK/nirviWhatTheDeviceIsDoing.ctl"/>
+			<Item Name="nirio_resource_hc.ctl" Type="VI" URL="/&lt;vilib&gt;/userdefined/High Color/nirio_resource_hc.ctl"/>
+			<Item Name="niLvFpga_Open_sbRIO-9636.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/sbRIO-9636/niLvFpga_Open_sbRIO-9636.vi"/>
+			<Item Name="niFpgaGenCallStack.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niFpgaGenCallStack.vi"/>
+			<Item Name="nirviFillInErrorInfo.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/nirviFillInErrorInfo.vi"/>
+			<Item Name="nirviReportUnexpectedCaseInternalErrorHelper.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/nirviReportUnexpectedCaseInternalErrorHelper.vi"/>
+			<Item Name="nirviReportUnexpectedCaseInternalError (U32).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/nirviReportUnexpectedCaseInternalError (U32).vi"/>
+			<Item Name="nirviReportUnexpectedCaseInternalError (String).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/nirviReportUnexpectedCaseInternalError (String).vi"/>
+			<Item Name="nirviReportUnexpectedCaseInternalError (Bool).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/nirviReportUnexpectedCaseInternalError (Bool).vi"/>
+			<Item Name="nirviReportUnexpectedCaseInternalError.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/nirviReportUnexpectedCaseInternalError.vi"/>
+			<Item Name="niFpgaFxpOverflowPolicy.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/common/scripting/niFpgaFxpOverflowPolicy.ctl"/>
+			<Item Name="niFpgaNumIoResolution.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/common/dataTypes/niFpgaNumIoResolution.ctl"/>
+			<Item Name="niFpgaBnFxpIntWrapper.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/common/blockNode/niFpgaBnFxpIntWrapper.ctl"/>
+			<Item Name="niLvFpgaFilterSettings.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/niLvFpgaFilterSettings.ctl"/>
+			<Item Name="niFpgaBwSettings.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/niFpgaBwSettings.ctl"/>
+			<Item Name="nirviBwOrderingFilterSections.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/nirviBwOrderingFilterSections.vi"/>
+			<Item Name="nirviIIRReorderCoefficients.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/nirviIIRReorderCoefficients.vi"/>
+			<Item Name="niLvFpgaBwValidateConfig.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/niLvFpgaBwValidateConfig.vi"/>
+			<Item Name="nirviBwQuantizeCoeffs.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/nirviBwQuantizeCoeffs.vi"/>
+			<Item Name="nirviBwForceUnityGains.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/nirviBwForceUnityGains.vi"/>
+			<Item Name="nirviBwFloatEquivCoeffs.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/nirviBwFloatEquivCoeffs.vi"/>
+			<Item Name="nirviBwProcessCoefficients.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/configuration/nirviBwProcessCoefficients.vi"/>
+			<Item Name="XDNodeRunTimeDep.lvlib" Type="Library" URL="/&lt;vilib&gt;/Platform/TimedLoop/XDataNode/XDNodeRunTimeDep.lvlib"/>
+			<Item Name="niFpgaSimulationCallBeginRW.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/Simulation/niFpgaSimulationCallBeginRW.vi"/>
+			<Item Name="niLvFpgaMergeErrorWithErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaMergeErrorWithErrorCode.vi"/>
+			<Item Name="niLvFpga_ReadFifo_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_ReadFifo_Dynamic.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Loopback Test" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
